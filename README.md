@@ -1,56 +1,38 @@
-# Projeto 3 - Testes da API de Usuarios (QA + DEV)
+# Testes de API de Usuarios
 
-Conjunto de testes para validar uma API REST real de usuarios, cobrindo endpoints CRUD com cenarios positivos e negativos.
+Repositorio GitHub: api-integration-tests
 
-Repositorio GitHub: `api-integration-tests`
+Projeto simples para testar a API de usuarios com Postman.
 
-## Objetivo
+## O que testa
 
-Garantir qualidade da API validando:
+- criar usuario
+- listar usuarios
+- buscar usuario
+- atualizar usuario
+- remover usuario
+- erros de validacao e recurso inexistente
 
-- Status HTTP
-- Estrutura JSON
-- Fluxo de sucesso
-- Fluxo de erro
+## Como rodar
 
-## Estrutura
+1. Suba a API do projeto backend-user-api.
+2. Importe a collection em postman/User-API-Tests.postman_collection.json.
+3. Execute os testes.
 
-- `docs/cenarios.md`: cenarios detalhados.
-- `docs/resultados.md`: planilha de execucao e evidencias.
-- `postman/User-API-Tests.postman_collection.json`: suite de testes no Postman.
+## Simulacao de resultado
 
-## API alvo
+| Cenario | Resultado esperado |
+|---|---|
+| Criar usuario valido | 201 |
+| Listar usuarios | 200 |
+| Buscar usuario existente | 200 |
+| Atualizar usuario | 200 |
+| Remover usuario | 204 |
+| Usuario inexistente | 404 |
+| Email invalido | 400 |
 
-- Base URL: `http://localhost:8080/api/users`
-- Projeto sugerido: `projeto-2-api-java-springboot`
+## Evidencias
 
-## Como executar
-
-1. Suba a API Spring Boot.
-2. Importe a collection no Postman.
-3. Execute em ordem:
-   - POST (criar)
-   - GET (listar e buscar)
-   - PUT (atualizar)
-   - DELETE (remover)
-4. Confira a aba `Test Results`.
-
-## Simulacao de execucao
-
-Exemplo de como o resultado pode aparecer no GitHub:
-
-| ID | Cenario | Status esperado | Status obtido | Resultado |
-|---|---|---:|---:|---|
-| CP-01 | POST criar usuario valido | 201 | 201 | Passou |
-| CP-02 | GET listar usuarios | 200 | 200 | Passou |
-| CP-03 | GET usuario existente | 200 | 200 | Passou |
-| CP-04 | PUT atualizar usuario | 200 | 200 | Passou |
-| CP-05 | DELETE remover usuario | 204 | 204 | Passou |
-| CN-01 | GET usuario inexistente | 404 | 404 | Passou |
-| CN-02 | POST email invalido | 400 | 400 | Passou |
-
-Exemplo de mensagem para colocar na secao de evidencias:
-
-- Execucao realizada via Postman com todos os cenarios principais aprovados.
-- Validacoes de JSON executadas com sucesso.
-- Falhas esperadas retornaram os codigos HTTP corretos.
+- print do Postman com testes passando
+- print dos erros esperados
+- print da resposta JSON
