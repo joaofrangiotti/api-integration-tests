@@ -36,3 +36,8 @@ Projeto simples para testar a API de usuarios com Postman.
 - print do Postman com testes passando
 - print dos erros esperados
 - print da resposta JSON
+
+## Arquivos principais
+
+- README.md
+- postman/User-API-Tests.postman_collection.json
